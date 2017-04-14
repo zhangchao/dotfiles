@@ -1,0 +1,10 @@
+[user]
+	name = chaozhang
+	email = super.chao.zhang@gmail.com
+
+[core]
+    editor = vim
+
+[diff "pandoc"]
+    textconv=pandoc --to=markdown
+
