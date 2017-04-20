@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Summary: Configure environment and install vim plugins online or offline
-# Usage: ./setup-install [ | --offline]
+# Usage: ./setup-install
 
 set -e
 [ -n "$DOTFILES_DEBUG" ] && set -x
@@ -8,7 +8,7 @@ set -e
 # Global vars.
 HOME=${HOME}
 EXEC_PATH=${PWD}
-VUNDLE_PATH="${HOME}/.vim/bundle/Vundle.vim"
+VUNDLE_PATH="${HOME}/.vim/chao/Vundle.vim"
 
 # Check bash version.
 check_bash_version()
@@ -82,44 +82,13 @@ install_plugins_online()
     vim +PluginInstall +qall
 }
 
-install_plugins_offline()
-{
-    local dot_vim_path="${HOME}/.vim"
-    local bundle_tar="bundle.tar.gz"
-
-    [ ! -d "$dot_vim_path" ] && mkdir ${dot_vim_path}
-
-    if [ -f "${bundle_tar}" ]; then
-        echo "Install vundle and plugins offline"
-
-        rm -rf "${dot_vim_path}/bundle"
-        cp ${bundle_tar} ${dot_vim_path}
-        cd ${dot_vim_path}
-
-        echo "Unpacking ${bundle_tar}..."
-        tar zxvf ${bundle_tar} > /dev/null 2>&1
-        rm ${bundle_tar}
-        cd - > /dev/null 2>&1
-
-        echo "Done!"
-    else
-        echo "ERROR: **"${bundle_tar}" not exists!"
-        exit 1
-    fi
-}
-
-
 
 main()
 {
     check_bash_version
     check_essential_softwares
     create_softlinks
-    if [ -n "$1" ] && [ "$1" = "--offline" ]; then
-        install_plugins_offline
-    else
-        install_plugins_online
-    fi
+    install_plugins_online
 }
 
 # Run script.
