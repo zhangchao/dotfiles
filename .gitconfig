@@ -9,6 +9,7 @@
 	last = cat-file commit HEAD
 	lg = log --pretty=oneline --abbrev-commit 
 [core]
+        autocrlf = true
 	pager = less
 	editor = vim
 	whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
@@ -34,5 +35,5 @@
 	changed = green bold
 	untracked = cyan
 [user]
-	name = Zhang Chao
+	name = Chao Zhang
 	email = super.chao.zhang@gmail.com
