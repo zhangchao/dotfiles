@@ -43,7 +43,7 @@ autocmd bufnewfile *.sh call HeaderBash()
 
 " Vundle
 filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
+set rtp+=~/.vim/chao/Vundle.vim
 call vundle#begin()
 
 " Plugins.
