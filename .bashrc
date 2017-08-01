@@ -3,8 +3,6 @@
 # Alias
 alias ll='ls -a -l'
 alias ssh='ssh -X'
-alias vim='/usr/local/bin/mvim -v'
-alias vi='/usr/local/bin/mvim -v'
 
 #SSH
 #speical 
