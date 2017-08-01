@@ -1,39 +1,50 @@
-[diff "pandoc"]
-    textconv=pandoc --to=markdown
-
-[alias]
-	co = checkout
-	st = -p status
-	cm = commit
-	w = whatchanged
-	last = cat-file commit HEAD
-	lg = log --pretty=oneline --abbrev-commit 
-[core]
-        autocrlf = false
-	pager = less
-	editor = vim
-	whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
-[color]
-	diff = auto
-	status = auto
-	branch = auto
-	interactive = auto
-	ui = true
-	pager = true
-[color "diff"]
-	meta = yellow bold
-	frag = magenta bold
-	old = red bold
-	new = green bold
-	commit = yellow bold
-[color "branch"]
-	current = white yellow 
-	local = yellow
-	remote = green
-[color "status"]
-	added = yellow bold
-	changed = green bold
-	untracked = cyan
 [user]
-	name = Chao Zhang
-	email = super.chao.zhang@gmail.com
+    name = Chao Zhang
+    email = super.chao.zhang@gmail.com
+
+[core]
+    autocrlf = false
+    pager = less
+    editor = vim
+    whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
+    
+[alias]
+    a = !"git add -u; git add ."
+    c = commit -am
+    cs = commit -S -am
+    s = status -s
+    co = checkout
+    df = diff --color --color-words --abbrev
+    d = "!git diff --color $@ | diff-so-fancy"
+    lg = log --graph --pretty='%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+    fc = "!f() { git log --pretty=format:'* %C(yellow)%h%Creset -%C(red)%d%Creset %s %Cgreen(%ad) %C(bold blue)<%cn>%Creset' --decorate --date=relative --grep=$1; }; f"
+    fs = "!f() { git log --pretty=format:'* %C(yellow)%h%Creset -%C(red)%d%Creset %s %Cgreen(%ad) %C(bold blue)<%cn>%Creset' --decorate --date=relative -S$1; }; f"
+    contributors = shortlog -n -s
+    remotes = remote -v
+    
+
+
+[color]
+    diff = auto
+    status = auto
+    branch = auto
+    interactive = autoP
+    ui = true
+    pager = true
+
+[color "diff"]
+    meta = yellow bold
+    frag = magenta bold
+    old = red bold
+    new = green bold
+    commit = yellow bold
+
+[color "branch"]
+    current = white yellow 
+    local = yellow
+    remote = green
+
+[color "status"]
+    added = yellow bold
+    changed = green bold
+    untracked = cyan

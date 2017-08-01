@@ -10,7 +10,7 @@ version()
 usage()
 {
     version
-    echo "Usage: ./setup [--install | --install --offline | --uninstall]"
+    echo "Usage: ./setup [--install | --uninstall]"
 }
 
 help()
@@ -24,7 +24,6 @@ help()
     echo "  --version              Show the version number"
     echo "  --install --offline    Install all dotfiles offline"
     echo
-    echo "  For more information, see https://github.com/PytLab/dotfiles"
     echo
 }
 
@@ -46,11 +45,7 @@ case "$1" in
         help
         ;;
     "--install")
-        if [ -n "$2" ] && [ "$2" = "--offline" ]; then
-            bash ./setup-install --offline
-        else
-            bash ./setup-install
-        fi
+        bash ./setup-install
         ;;
     "--uninstall")
         bash ./setup-uninstall

@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-# Summary: Configure environment and install vim plugins online or offline
 # Usage: ./setup-install
 
 set -e
@@ -8,7 +7,7 @@ set -e
 # Global vars.
 HOME=${HOME}
 EXEC_PATH=${PWD}
-VUNDLE_PATH="${HOME}/.vim/chao/Vundle.vim"
+VUNDLE_PATH="${HOME}/.vim/Vundle.vim"
 
 # Check bash version.
 check_bash_version()
@@ -45,19 +44,12 @@ create_softlinks()
         sed -i "/Plugin 'rizzatti\/dash\.vim/d" .vimrc
     fi
 
-    local dotfiles=(".pip" ".vimrc" ".gitconfig" ".tmux.conf" ".zchaorc" ".tern-project")
+    local dotfiles=(".pip" ".vimrc" ".gitconfig" ".tmux.conf" ".bashrc")
     for dotfile in "${dotfiles[@]}"
     do
         ln -sf "${EXEC_PATH}/${dotfile}" "${HOME}/${dotfile}"
         echo "Create symlink ${HOME}/${dotfile}"
     done
-
-    # Create .ycm_extra_conf.py symlink.
-    cd ${HOME}
-    ln -sf ${EXEC_PATH}/.ycm_extra_conf.py .ycm_extra_conf.py
-    cd - > /dev/null 2>&1
-    echo "Create symlink ${HOME}/.ycm_extra_conf.py"
-    echo
 }
 
 install_plugins_online()
