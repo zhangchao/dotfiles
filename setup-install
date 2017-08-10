@@ -8,7 +8,7 @@ set -e
 HOME=${HOME}
 EXEC_PATH=${PWD}
 VUNDLE_PATH="${HOME}/.vim/Vundle.vim"
-
+TPM_PATH="${HOME}/.tmux/plugin/tpm"
 # Check bash version.
 check_bash_version()
 {
@@ -54,6 +54,16 @@ create_softlinks()
 
 install_plugins_online()
 {
+    # Install tmux plugin 
+    if [ -d "${TPM_PATH}" ]; then 
+        echo "${TPM_PATH} already exist. Updating..."
+        cd ${TPM_PATH}
+        git pull 
+        cd - > /dev/null 2>&1
+    else
+        echo "${TPM_PATH} not exist. Downloading..."
+        git clone https://github.com/tmux-plugins/tpm ${TPM_PATH}
+    fi 
     # Install vundle at first.
     if [ -d "${VUNDLE_PATH}" ]; then
         echo "${VUNDLE_PATH} already exits. Updating..."

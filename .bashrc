@@ -6,7 +6,7 @@ alias ssh='ssh -X'
 
 #SSH
 #speical 
-alias sshj='function _sshj(){ ssh jucao@$1$2001.$1.com; };_sshj'
-alias scpj='function _scpj(){ scp jucao@$1$2001.$1.com:$3 $4; };_scpj'
+alias sshj='function _sshj(){ ssh $1@$2$3001.$2.com; };_sshj'
+alias scpj='function _scpj(){ scp $1@$2$3001.$2.com:$4 $5; };_scpj'
 
-
+eval $(docker-machine env)
