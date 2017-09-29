@@ -7,6 +7,26 @@
     pager = less
     editor = vim
     whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
+
+[difftool "kdiff3"]
+    path = /Applications/kdiff3.app/Contents/MacOS/kdiff3
+    trustExitCode = false
+    
+[difftool]
+    prompt = false
+    
+[diff]
+    tool = kdiff3
+    
+[mergetool "kdiff3"]
+    path = /Applications/kdiff3.app/Contents/MacOS/kdiff3
+    trustExitCode = false
+    
+[mergetool]
+    keepBackup = false
+    
+[merge]
+    tool = kdiff3
     
 [alias]
     a = !"git add -u; git add ."
