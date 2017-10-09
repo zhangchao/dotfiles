@@ -10,6 +10,7 @@ brew install tmux
 brew install vim
 brew install python3
 brew install ipython
+brew install mosh
  
 # https://caskroom.github.io/search
 brew tap caskroom/cask
