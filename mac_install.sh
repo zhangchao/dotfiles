@@ -22,8 +22,7 @@ brew cask install intellij-idea-ce
 brew cask install docker-toolbox
 brew cask install sublime-text
 brew cask install kdiff3
+# Press command for a while
 brew cask install cheatsheet
 brew cask install dash
-
-
 
