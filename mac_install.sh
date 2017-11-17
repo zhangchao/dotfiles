@@ -5,11 +5,12 @@
 brew install wget
 brew install curl
 brew install git
-brew install maven@3.3
+
 brew install tmux
 brew install vim
 brew install python3
 brew install ipython
+brew install node
 brew install mosh
  
 # https://caskroom.github.io/search
@@ -25,4 +26,7 @@ brew cask install kdiff3
 # Press command for a while
 brew cask install cheatsheet
 brew cask install dash
+
+brew cask install java
+brew install maven@3.3
 
