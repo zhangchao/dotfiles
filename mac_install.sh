@@ -30,3 +30,16 @@ brew cask install dash
 brew cask install java
 brew install maven@3.3
 
+
+brew cask install slack
+brew cask install postman
+brew cask install go2shell
+brew cask install screens
+brew cask install atom
+brew cask install mysqlworkbench
+brew cask install codekit
+brew cask install screens
+brew cask install keka
+brew cask install cleanmymac
+brew cask install licecap
+brew cask install youdao
