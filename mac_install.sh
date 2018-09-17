@@ -20,7 +20,7 @@ brew cask install iterm2
 brew cask install google-chrome
 brew cask install virtualbox
 brew cask install intellij-idea-ce
-brew cask install docker-toolbox
+brew cask install docker
 brew cask install sublime-text
 brew cask install kdiff3
 # Press command for a while
